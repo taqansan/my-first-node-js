@@ -1,13 +1,16 @@
 'use strict';
+
 function fib(n) {
-    if (n === 0) {
-      return 0;
-    } else if (n === 1) {
-      return 1;
+    let array = new Array(0, 1);
+
+    for (let i = 0; i <= n; i++)
+    {
+        if (array[i] === undefined)
+        {
+            array.push(array[i-1] + array[i-2]);
+        }
+        console.log(array[i]);
     }
-    return fib(n - 1) + fib(n - 2);
   }
-  const length = 40;
-  for (let i = 0; i <= length; i++) {
-    console.log(fib(i));
-  }
+const length = 40;
+fib(length);
